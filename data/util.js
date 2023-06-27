@@ -1,13 +1,13 @@
 const fs = require('node:fs/promises');
-const filePath = __dirname + '/events.json';
+
 async function readData() {
   
-  const data = await fs.readFile(filePath, 'utf8');
+  const data = await fs.readFile('events.json', 'utf8');
   return JSON.parse(data);
 }
 
 async function writeData(data) {
-  await fs.writeFile(filePath, JSON.stringify(data));
+  await fs.writeFile('events.json', JSON.stringify(data));
 }
 
 exports.readData = readData;
